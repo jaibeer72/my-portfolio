@@ -9,9 +9,6 @@ let dev = true;
 const config = {
   kit: {
     adapter: adapter(),
-    paths: {
-      base: dev ? '' : "https://jaibeer72.github.io/",
-    }
   },
 
   preprocess: [

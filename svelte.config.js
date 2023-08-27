@@ -8,7 +8,12 @@ let dev = true;
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: null
+    }),
+    paths: {
+      base: ''
+    }
   },
 
   preprocess: [

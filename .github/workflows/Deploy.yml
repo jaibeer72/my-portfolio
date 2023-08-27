@@ -31,17 +31,21 @@ jobs:
       
     - name: Push to Target Repository
       run: |
-        # Delete the gh-pages branch
-        git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/jaibeer72/jaibeer72.github.io.git repo-temp
+        # Clone the repository using PAT
+        git clone https://${{ secrets.GH_PAT }}@github.com/jaibeer72/jaibeer72.github.io.git repo-temp
         cd repo-temp
-        git push origin --delete gh-pages
-        cd ..
-        rm -rf repo-temp
-
-        # Push the new build
-        cd build
-        git init
+    
+        # Check out the master branch and clean its content
+        git checkout master
+        git rm -rf .
+        
+        # Copy the new build to the repo-temp directory
+        cp -r ../build/* .
+    
+        # Commit and push the changes
         git add .
         git commit -m "Deploy from GitHub Actions"
-        git remote add origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/jaibeer72/jaibeer72.github.io.git
-        git push -u origin master:gh-pages --force
+        git push origin master
+    
+        cd ..
+        rm -rf repo-temp

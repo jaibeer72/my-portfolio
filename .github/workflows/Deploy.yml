@@ -29,3 +29,5 @@ jobs:
       with:
         branch: gh-pages  # or the branch you want to deploy to
         folder: build     # or the directory your build command outputs to
+        token: ${{ secrets.GH_PAT }}  # Use the PAT
+        repository: jaibeer72/jaibeer72.github.io 

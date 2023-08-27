@@ -35,17 +35,19 @@ jobs:
         git clone https://${{ secrets.GH_PAT }}@github.com/jaibeer72/jaibeer72.github.io.git repo-temp
         cd repo-temp
     
-        # Check out the master branch and clean its content
+        # Check out the master branch
         git checkout master
+        # Move the .github directory to a temporary location
+        mv .github ../github-temp
+        # Clean the content of the master branch, excluding the .github directory
         git rm -rf .
-        
+        # Restore the .github directory
+        mv ../github-temp .github
         # Copy the new build to the repo-temp directory
         cp -r ../build/* .
-    
         # Commit and push the changes
         git add .
         git commit -m "Deploy from GitHub Actions"
         git push origin master
-    
         cd ..
         rm -rf repo-temp

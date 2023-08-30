@@ -9,6 +9,8 @@ let dev = true;
 const config = {
   kit: {
     adapter: adapter({
+      pages: 'build',
+      assets: 'build',
       fallback: null
     }),
     paths: {

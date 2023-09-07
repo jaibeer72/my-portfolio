@@ -10,7 +10,7 @@
     <div class="w-full max-w-sm bg-gradient-to-r from-gray-700 via-gray-900 to-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-11">
         <div class="flex flex-col items-center pb-1">
             <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={profilePicture} alt="Bonnie image"/>
-            <h5 class="mb-1 text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 dark:text-white">Jaibeer Singh Dugal</h5>
+            <h5>Jaibeer Singh Dugal</h5>
             <span class="text-sm text-gray-500 dark:text-gray-400">Software Developer</span>
             <div class="flex mt-4 space-x-3 md:mt-6">
                 <button type="button" class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"

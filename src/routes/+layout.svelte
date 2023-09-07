@@ -1,5 +1,6 @@
 <script lang="ts">
   import "../app.postcss";
+  import "../globals.css"
   let isOpenHamberger: boolean = false;
 </script>
 

@@ -1,12 +1,13 @@
 <script lang="ts">
     import profilePicture from "$lib/ProfilePicture.png";
+    import GamesWorkedOn from "../components/gamesWorkedOn.svelte";
 
     function redirectGithub() {
         window.location.href = "https://github.com/jaibeer72";
     }
 </script>
 <section class="flex flex-wrap justify-center items-center text-center w-full h-screen bg-gradient-to-r from-purple-400 to-pink-600">
-    <div class="py-8">
+    <div class="py-4">
     <div class="w-full max-w-sm bg-gradient-to-r from-gray-700 via-gray-900 to-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-11">
         <div class="flex flex-col items-center pb-1">
             <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={profilePicture} alt="Bonnie image"/>
@@ -25,7 +26,7 @@
         </div>
     </div> 
 </div>
-    <div class="w-full flex rounded-lg flex-wrap justify-center items-center w-full h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black">
-
+    <div class="rounded-lg w-full h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black">
+        <GamesWorkedOn />
     </div>
  </section>

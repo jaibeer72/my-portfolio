@@ -8,21 +8,37 @@
 
     let card: HTMLElement;
 
-    function handleMouseMove(event: MouseEvent) {
-    let offsetX = event.offsetX;
-    let offsetY = event.offsetY;
-    let { width, height } = card.getBoundingClientRect();
-    let xRotation = -(offsetY / height - 0.5) * 20;
-    let yRotation = (offsetX / width - 0.5) * 20;
-    card.style.transform = `perspective(500px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+    function handleInteraction(event: MouseEvent | TouchEvent) {
+    let offsetX, offsetY, width, height;
+
+    if (event instanceof MouseEvent) {
+      offsetX = event.offsetX;
+      offsetY = event.offsetY;
+    } else {
+      const rect = (event.target as HTMLElement).getBoundingClientRect();
+      offsetX = event.touches[0].clientX - rect.left;
+      offsetY = event.touches[0].clientY - rect.top;
     }
 
-    function handleMouseLeave() {
+    ({ width, height } = card.getBoundingClientRect());
+    let xRotation = (offsetY / height - 0.5) * 20;
+    let yRotation = -(offsetX / width - 0.5) * 20;
+    card.style.transform = `perspective(500px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+  }
+
+  function handleMouseLeave() {
     card.style.transform = '';
-    }
+  }
 </script>
 <section class="flex flex-wrap justify-center items-center text-center w-full h-screen bg-gradient-to-r from-purple-400 to-pink-600">
-    <div bind:this={card} on:mousemove={handleMouseMove} on:mouseleave={handleMouseLeave} class="py-4">
+    <div 
+    bind:this={card} 
+    on:mousemove={handleInteraction} 
+    on:touchmove={handleInteraction} 
+    on:mouseleave={handleMouseLeave} 
+    role="region" 
+    aria-label="3D interactive card" 
+    class="py-4">
     <div class="w-full max-w-sm bg-gradient-to-r from-gray-700 via-gray-900 to-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-11">
         <div class="flex flex-col items-center pb-1">
             <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={profilePicture} alt="Bonnie image"/>

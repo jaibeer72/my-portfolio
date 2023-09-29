@@ -23,6 +23,7 @@
   </style>
   
   <div class="grid grid-cols-4 gap-8 p-8 justify-center items-center">
+    <h1 class="text-4xl font-bold text-center col-span-4 text-white shadow-lg">Games I've Worked On</h1>
     {#each games as { name, imageUrl, websiteUrl }}
       <div class="transform transition-transform duration-300 hover:scale-105 bg-white shadow-lg hover:bg-gray-100 hover:shadow-xl rounded-lg overflow-hidden max-w-sm">
         <a href={websiteUrl} target="_blank" rel="noopener noreferrer">

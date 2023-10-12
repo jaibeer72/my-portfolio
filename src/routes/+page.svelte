@@ -59,5 +59,14 @@
 </div>
     <div class="rounded-lg w-full h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black">
         <GamesWorkedOn />
+             <!-- Play this game basically here in this iframe -->
+    <div class ="">
+      <h1 class="text-4xl font-bold text-center col-span-4 text-white  p-4">Play Space bound here for fun while I slowly add more of my experiance and projects</h1>
+      <iframe
+      src="https://jaibeer72.github.io/spacebound-html-game/"
+      frameborder="0"
+      style="width: 100%; height: 700px"
+    ></iframe>
+  </div>
     </div>
  </section>

@@ -1,6 +1,6 @@
 h5 {
     @apply mb-1 text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600;
-}; 
+}
 
 .gradient-text{
     @apply mb-1 text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600;
@@ -9,3 +9,7 @@ h5 {
 section {
     --bg-color: linear-gradient(to right, #4a5568, #2d3748, #1a202c);
   }
+
+div {
+    background-color: var(--bg-color);
+}

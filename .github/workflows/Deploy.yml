@@ -18,11 +18,12 @@ jobs:
       with:
         node-version: '18'  # or your preferred Node.js version
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build
+    - name: Clean and Rebuild
+      run: |
+        rm -rf node_modules
+        npm cache clean --force
+        npm install
+        npm run build
     
     - name: Configure Git
       run: |

@@ -14,7 +14,7 @@ const config = {
       fallback: null
     }),
     paths: {
-      base: process.argv.includes('dev') ? '' : './jaibeer72.github.io'
+      base: process.argv.includes('dev') ? '' : '/jaibeer72.github.io'
     }
   },
 

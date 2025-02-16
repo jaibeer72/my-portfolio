@@ -11,10 +11,12 @@ const config = {
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: null
+      fallback: undefined,
+      precompress: false,
+      strict: false
     }),
     paths: {
-      base: process.argv.includes('dev') ? '' : '/jaibeer72.github.io/tree/master'
+      base: process.argv.includes('dev') ? '' : ''
     }
   },
 

@@ -1,0 +1,54 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or your default branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  # or your preferred Node.js version
+
+    - name: Clean and Rebuild
+      run: |
+        rm -rf node_modules
+        npm cache clean --force
+        npm install
+        npm run build
+    
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+      
+    - name: Push to Target Repository
+      run: |
+        # Clone the repository using PAT
+        git clone https://${{ secrets.GH_PAT }}@github.com/jaibeer72/jaibeer72.github.io.git repo-temp
+        cd repo-temp
+    
+        # Check out the master branch
+        git checkout master
+        # Move the .github directory to a temporary location
+        mv .github ../github-temp
+        # Clean the content of the master branch, excluding the .github directory
+        git rm -rf .
+        # Restore the .github directory
+        mv ../github-temp .github
+        # Copy the new build to the repo-temp directory
+        cp -r ../build/* .
+        # Commit and push the changes
+        git add .
+        git commit -m "Deploy from GitHub Actions"
+        git push origin master
+        cd ..
+        rm -rf repo-temp

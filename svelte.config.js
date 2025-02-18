@@ -1,9 +1,7 @@
 import preprocess from "svelte-preprocess";
-//import adapter from "@sveltejs/adapter-auto";
 import adapter from '@sveltejs/adapter-static';
 
-
-let dev = true; 
+let dev = false;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -16,7 +14,7 @@ const config = {
       strict: false
     }),
     paths: {
-      base: process.argv.includes('dev') ? '' : ''
+      base: dev ? '' : '/jaibeer72.github.io'
     }
   },
 

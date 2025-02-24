@@ -65,6 +65,12 @@
         Visit my itch.io portfolio
     </a>
 </div>
-
+<div class="iframe-container">
+    <iframe frameborder="0" src="https://itch.io/embed/299649?dark=true" width="552" height="167"><a href="https://suryavamsikk.itch.io/de-light">De-light by suryavamsikk, jaibeer72, bustingjam, Tarun.b</a></iframe>
+    <iframe frameborder="0" src="https://itch.io/embed/402744?dark=true" width="552" height="167"><a href="https://jaibeer72.itch.io/escapeforever">EscapeForever by jaibeer72</a></iframe>
+    <iframe frameborder="0" src="https://itch.io/embed/405868?dark=true" width="552" height="167"><a href="https://jaibeer72.itch.io/hungry-harold-ar">Hungry Harold AR by jaibeer72</a></iframe>
+    <iframe frameborder="0" src="https://itch.io/embed/304897?dark=true" width="552" height="167"><a href="https://jaibeer72.itch.io/openglproceduralgeneratedlandmass">OpenGLProceduralGeneratedLandMass by jaibeer72</a></iframe>
+    <iframe frameborder="0" src="https://itch.io/embed/304822?dark=true" width="552" height="167"><a href="https://jaibeer72.itch.io/visualiserio">VisualiserIO by jaibeer72</a></iframe>
+</div>
 
 </div>

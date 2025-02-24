@@ -14,7 +14,7 @@ const config = {
       strict: false
     }),
     paths: {
-      base: dev ? '' : '/jaibeer72.github.io'
+      base: dev ? '' : ''
     }
   },
 
